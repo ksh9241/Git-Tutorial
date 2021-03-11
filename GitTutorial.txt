@@ -20,6 +20,11 @@ git push : git repository에 올라감
 
 git push -f : 강제로 push한다.
 
+git remote : 현재 원격저장소로 어떤것이 등록되어있는지 확인할 수 있다.
+git remote -v : 원격 저장소 리스트를 불러온다.
+git remote rm <원격저장소명> : 원격 저장소 삭제
+git remote add <new 원격저장소명> repository주소
+
 git commit --amend : commit 메시지 내용을 수정할 수 있다. -> a 입력(하단 --insert-- 생김) -> 내용 수정 후 esc 누르고 :wq! 엔터
 
 git checkout --<file> : 수정된 내용을 무시한다.
@@ -63,3 +68,7 @@ Git Project의 3가지 구성요소
 통합 브랜치 : 배포가 가능한 수준의 브랜치로 일반적으로 마스터(main)브랜치를 의미한다.
 토픽 브랜치 : 특정한 기능을 위해 만들어진 브랜치로 일반적으로 마스터(main)브랜치 이외의 다른 브랜치를 의미한다.
 
+병합 수행 중 두개의 브랜치의 데이터가 다를 때 :
+서로 다른 파일에 들어가서 차이점이 나오는 부분을 확인 후 최종적으로 사용할 파일로 수정 후 다시 add commit처리 이후 git merge <branch> 로 병합하여 처리한다.
+
+원격저장소(Remote Repository) 관리하기 
