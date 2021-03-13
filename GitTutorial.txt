@@ -71,4 +71,5 @@ Git Project의 3가지 구성요소
 병합 수행 중 두개의 브랜치의 데이터가 다를 때 :
 서로 다른 파일에 들어가서 차이점이 나오는 부분을 확인 후 최종적으로 사용할 파일로 수정 후 다시 add commit처리 이후 git merge <branch> 로 병합하여 처리한다.
 
-원격저장소(Remote Repository) 관리하기 
+해당 디렉토리 zip파일로 압축하기
+git archive --format=zip <브랜치> -o <압축파일명.zip>
