@@ -15,7 +15,7 @@ git reset --hard : 해당 커밋위치로 돌아가며 그 이후에 커밋에�
 git reset : add한 파일을 다시 내릴 수 있다.
 
 git commit -m "저장할 메세지"
-
+ 
 git push : git repository에 올라감
 
 git push -f : 강제로 push한다.
