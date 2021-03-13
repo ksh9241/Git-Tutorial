@@ -73,3 +73,9 @@ Git Project의 3가지 구성요소
 
 해당 디렉토리 zip파일로 압축하기
 git archive --format=zip <브랜치> -o <압축파일명.zip>
+
+커밋 메시지 수정하기
+git rebase -i HEAD~3(log에 최근 3개만 보여주기) <commit HashCode를 넣어주면 특정 커밋 가능>-> i눌러 insert로 바꾸고 pick부분을 Commands의 옵션을 보고 수정처리 -> esc wq! enter-> i눌러서 insert만들고 메시지 수정 후 esc wq! enter
+
+특정 커밋 삭제하기 
+git rebase -i HEAD~개수 [commit HashCode] -> rebase 에디터에서 Commands 보고 drop으로 수정 후 완료
