@@ -15,7 +15,7 @@ git reset --hard : 해당 커밋위치로 돌아가며 그 이후에 커밋에�
 git reset : add한 파일을 다시 내릴 수 있다.
 
 git commit -m "저장할 메세지"
-
+ 
 git push : git repository에 올라감
 
 git push -f : 강제로 push한다.
@@ -71,4 +71,11 @@ Git Project의 3가지 구성요소
 병합 수행 중 두개의 브랜치의 데이터가 다를 때 :
 서로 다른 파일에 들어가서 차이점이 나오는 부분을 확인 후 최종적으로 사용할 파일로 수정 후 다시 add commit처리 이후 git merge <branch> 로 병합하여 처리한다.
 
-원격저장소(Remote Repository) 관리하기 
+해당 디렉토리 zip파일로 압축하기
+git archive --format=zip <브랜치> -o <압축파일명.zip>
+
+커밋 메시지 수정하기
+git rebase -i HEAD~3(log에 최근 3개만 보여주기) <commit HashCode를 넣어주면 특정 커밋 가능>-> i눌러 insert로 바꾸고 pick부분을 Commands의 옵션을 보고 수정처리 -> esc wq! enter-> i눌러서 insert만들고 메시지 수정 후 esc wq! enter
+
+특정 커밋 삭제하기 
+git rebase -i HEAD~개수 [commit HashCode] -> rebase 에디터에서 Commands 보고 drop으로 수정 후 완료
