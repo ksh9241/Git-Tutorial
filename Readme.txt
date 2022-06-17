@@ -40,3 +40,5 @@ public class Test{
 강조는 다음과 같이 할 수 있습니다.
 
 **강조는 별을 두개넣고** ~~취소선은 물결을 두개 넣습니다~~
+
+git config --global core.editor "code --wait" 사용을 위한 추가
