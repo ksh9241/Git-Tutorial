@@ -37,6 +37,10 @@
     - 문제점 : git이 vscode를 못찾을 때
         1. control + shift + p를 눌러서 팔렛 열기
         2. code command ... 찾아야하는데 없음. (진행불가.)
+
+- git branch : 브랜치읨 목록을 보여준다.
+    - git branch [branch-name] : 브랜치를 생성한다.
+- git switch [branch-name] : 이 명령어는 HEAD가 실행한 브랜치를 바라보게 한다.
     
     
 
