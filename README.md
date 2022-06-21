@@ -2,6 +2,7 @@
 
 ### 명령어 정리
 - pwd : 현재 디렉토리 경로 출력
+- clear : cmd 내용 지우기
 - open : 폴더나 파일 실행
 - git config --global user.name "" : 유저명 변경
 - git config --global user.email "" : 유저 이메일 변경
@@ -40,7 +41,10 @@
 
 - git branch : 브랜치읨 목록을 보여준다.
     - git branch [branch-name] : 브랜치를 생성한다.
-- git switch [branch-name] : 이 명령어는 HEAD가 실행한 브랜치를 바라보게 한다.
+- git switch [branch-name] : 이 명령어는 HEAD가 실행한 
+브랜치를 바라보게 한다.
+    - git switch -c [branch-name] : 브랜치를 생성하고 이동까지 한번에 처리한다.
+- git checkout [branch-name] : 브랜치 이동을 위한 명령어이다. switch 이전 시대에 사용했지만 현재도 사용가능하다.
     
     
 
