@@ -4,6 +4,7 @@
 - pwd : 현재 디렉토리 경로 출력
 - clear : cmd 내용 지우기
 - open : 폴더나 파일 실행
+- cat : 텍스트 파일의 내용을 화면에 출력하는 명령어
 - git config --global user.name "" : 유저명 변경
 - git config --global user.email "" : 유저 이메일 변경
 - cd .. : 상위 디렉토리 이동
@@ -41,11 +42,14 @@
 
 - git branch : 브랜치읨 목록을 보여준다.
     - git branch [branch-name] : 브랜치를 생성한다.
+    - git branch -d [branch-name] : 브랜치를 삭제한다.
+    - git branch -D [branch-name] : 병합여부와 상관없이 삭제한다.
+    - git branch -m [branch-name] : 브랜치명을 변경한다.
 - git switch [branch-name] : 이 명령어는 HEAD가 실행한 
 브랜치를 바라보게 한다.
     - git switch -c [branch-name] : 브랜치를 생성하고 이동까지 한번에 처리한다.
 - git checkout [branch-name] : 브랜치 이동을 위한 명령어이다. switch 이전 시대에 사용했지만 현재도 사용가능하다.
-    
+
     
 
 
@@ -84,4 +88,7 @@
 
 - HEAD가 무엇인가?
     - HEAD의 의미 : 우리가 보거나 확인하고 있는 현재 위치를 말하는 것이다. 즉 어느브랜치를 바라보는지에 대한 화살표 같은 것
+- 브랜치 변경 시 주의사항 
+    -  A브랜치에서 B로 변경할 때 충돌되는 부분이 있다면 반드시 커밋을하고 이동해야 함. 안그러면 데이터 유실의 위험이 있음.
+    - 그러나 A브랜치엔 없고 B브랜치에 신규로 만든 데이터는 따로 커밋을 하지 않아도 데이터 유실이 발생하지 않고, 병합됨.
     
