@@ -52,7 +52,7 @@
     이동까지 한번에 처리한다.
     - git switch - : 직전의 브랜치로 이동한다.
 - git checkout [branch-name] : 브랜치 이동을 위한 명령어이다. switch 이전 시대에 사용했지만 현재도 사용가능하다.
-    - git checkout HEAD : 수정을 해서 status 상태가 있지만 처리하고 싶지 않고 되돌리고 싶을 때 사용한다.
+    - git checkout HEAD [file-name]: 수정을 해서 status 상태가 있지만 처리하고 싶지 않고 되돌리고 싶을 때 사용한다.
 - git merge [branch-name] : HEAD가 가리키는 현재 브랜치에서 지정한 브랜치를 merge한다.
 - git diff : 최종 커밋 이력과 현재 파일의 상태를 비교한다.
 - git stash : 커밋하지 않은 변경사항들을 임시 저장하도록 해주고 불필요한 커밋으로 이력을 지저분해지는 것 없이 나중에 돌아올 수 있게 해준다.
@@ -61,7 +61,10 @@
     - git stash apply : peek 메서드와 비슷하다. 내용을 가져오지만 저장공간에 저장 이력을 지우지 않는다. (보통 B 브랜치에서 작업한 걸 마스터브랜치로 적용시킬 때 사용한다. 이력이 남아있어야 작업한 브랜치에서도 불러올 수 있기 때문.)
     - git stash drop []: 저장된 stash 정보를 삭제한다.
     - git stash clear : 저장된 모든 stash 정보를 삭제한다.
-
+- git restore [file-name] : git checkout HEAD [file-name] 과 동일하게 상태가 변경된 파일을 최종커밋 상태로 되돌린다.
+단 파일 생성후 생성 전으로 되돌리기는 안되는 듯 싶다.
+    - git restore --source HEAD~N [file-name] : 그 파일만 HEAD~N의 위치로 돌아가는 듯?
+    - git restore --staged [file-name] : git add를 통해 스테이지에 올려둔 파일을 내릴 수 있다.
 
 
 ### 초심자가 실수하는 부분
@@ -135,3 +138,7 @@
 
 ### 헤드기반 참조
 - git checkout HEAD~N 는 check out log기준 ~N개 이전의 헤드로 이동하기 입니다.
+
+### 수정사항 취소하기
+- git Restore는 git checkout 부담을 줄여준다.
+- git restore의 두 번째 용도는 스테이지된 파일을 언스테이지하는 것이다.
