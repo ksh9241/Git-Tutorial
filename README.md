@@ -48,8 +48,11 @@
     - git branch -v: 브랜치 목록과 최종커밋이력을 함께 보여준다.
 - git switch [branch-name] : 이 명령어는 HEAD가 실행한 
 브랜치를 바라보게 한다.
-    - git switch -c [branch-name] : 브랜치를 생성하고 이동까지 한번에 처리한다.
+    - git switch -c [branch-name] : 브랜치를 생성하고 
+    이동까지 한번에 처리한다.
+    - git switch - : 직전의 브랜치로 이동한다.
 - git checkout [branch-name] : 브랜치 이동을 위한 명령어이다. switch 이전 시대에 사용했지만 현재도 사용가능하다.
+    - git checkout HEAD : 수정을 해서 status 상태가 있지만 처리하고 싶지 않고 되돌리고 싶을 때 사용한다.
 - git merge [branch-name] : HEAD가 가리키는 현재 브랜치에서 지정한 브랜치를 merge한다.
 - git diff : 최종 커밋 이력과 현재 파일의 상태를 비교한다.
 - git stash : 커밋하지 않은 변경사항들을 임시 저장하도록 해주고 불필요한 커밋으로 이력을 지저분해지는 것 없이 나중에 돌아올 수 있게 해준다.
@@ -57,6 +60,8 @@
     - git stash pop [] : stash 저장 정보를 불러온다.
     - git stash apply : peek 메서드와 비슷하다. 내용을 가져오지만 저장공간에 저장 이력을 지우지 않는다. (보통 B 브랜치에서 작업한 걸 마스터브랜치로 적용시킬 때 사용한다. 이력이 남아있어야 작업한 브랜치에서도 불러올 수 있기 때문.)
     - git stash drop []: 저장된 stash 정보를 삭제한다.
+    - git stash clear : 저장된 모든 stash 정보를 삭제한다.
+
 
 
 ### 초심자가 실수하는 부분
@@ -119,3 +124,14 @@
     - git stash save를 실행 시 Staging Area에 커밋하지 않은 내역을 저장해둔다.
     - git stash list를 사용하여 저장해둔 stas가져올 내용을 git stash pop으로 다시 호출할 수 있다.
     - 인덱스 이력은 스택 형태로 쌓인다.
+
+### 분리된 헤드
+- git checkout [hashCode] 입력 시 헤드를 분리시켜 시간이동을 할 수 있다.
+- git switch [branch-name] || git checkout [branch-name] 으로 현재 커밋상태로 돌아올 수 있다.
+- 일반적으로 헤드는 브랜치를 따라간다. 헤드는 커밋을 참조하지 않는다.
+- 분리된 헤드란 브랜치는 최종 커밋상태에서 움직이지 않고, 헤드만 이동하여 로그상태를 확인한다.
+- 사용 목적
+    - 분리된 헤드를 통해 과거로 돌아가서 탐색 및 새로운 브랜치를 만들어서 새로운 방향으로 개발하기 위함.
+
+### 헤드기반 참조
+- git checkout HEAD~N 는 check out log기준 ~N개 이전의 헤드로 이동하기 입니다.
