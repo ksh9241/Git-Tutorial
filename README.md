@@ -65,6 +65,7 @@
 단 파일 생성후 생성 전으로 되돌리기는 안되는 듯 싶다.
     - git restore --source HEAD~N [file-name] : 그 파일만 HEAD~N의 위치로 돌아가는 듯?
     - git restore --staged [file-name] : git add를 통해 스테이지에 올려둔 파일을 내릴 수 있다.
+- git reset [hashcode]: 커밋된 위치로 되돌릴 수 있다. 작업 내용은 롤백되지 않는다.
 
 
 ### 초심자가 실수하는 부분
