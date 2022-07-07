@@ -68,6 +68,16 @@
 - git reset [hashcode]: 커밋된 위치로 되돌릴 수 있다. 작업 내용은 롤백되지 않는다.
 - git revert [hashcode] : 커밋을 새로만들고 해시코드 이전으로 되돌릴 수 있다. 커밋이력이 지워지지 않는다.
     - A가 1,2,3 커밋이력이 있고 B가 1,2,3,4의 커밋이력이 존재할 때 B가 4까지 작업을 완료했지만 A가 2,3의 작업을 지우고 싶을 때 reset을 하게되면 B의 4가 지워지기 때문에 A는 revert를 사용하여 이전 이력을 남기면서 내가 지우고 싶은 부분을 수정하여 재커밋할 수 있다.
+- git clone [url] : 클라우드에 있는 파일을 다운로드한다.
+- SSH 확인하기
+    - ls -al ~/.ssh
+    - SSH 설정 : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+    - 이후 진행 X 필요 시 진행할 예정
+- git remote : 현재 저장소에 있는 원격들을 나열해서 보여준다.
+    - git remote -v : 저장소의 원격들의 이름과 주소를 보여준다.
+    - git remote add [name] [url] : 이름의 표준은 origin이고, url은 깃허브 리포지토리 생성 시 나오는 url을 넣어준다.
+    - git remote rename [old] [new] : 원격 이름을 바꾼다.
+    - git remote remove [name] : 원격을 삭제한다. 오픈소스의 경우 원격이 여러개라 삭제하는 일도 발생한다.
 
 ### 초심자가 실수하는 부분
 1. 어떤 프로젝트를 위해 하위 디렉토리에서 변경하는 파일이나 폴더는 깃에 의해 추적된다.
@@ -144,3 +154,37 @@
 ### 수정사항 취소하기
 - git Restore는 git checkout 부담을 줄여준다.
 - git restore의 두 번째 용도는 스테이지된 파일을 언스테이지하는 것이다.
+
+### Git hub
+- 깃허브란?
+    - 한마디로 요약하면 깃 저장소를 위한 호스팅 플랫폼
+    - 깃허브를 사용하면 클라우드에 깃 저장소를 넣을 수 있다.
+    - 깃허브를 이용하면 협업에 좋다.
+    - 대기업용이 유료이고, 개인은 무료로 이용 가능하다.
+
+- 깃허브를 사용해야 하는 이유
+    - 오픈소스 프로젝트
+        - 버그 수정 및 소스 코드 공유
+        - 제품사용자들로 구성된 커뮤니티 토론
+    - 최신 정보 얻기
+    - 협업하기
+
+### git clone
+- 로컬에 없고, 클라우드에 있는 디렉토리를 다운로드 할 수 있다.
+- git이 존재하는 곳에서 사용하지 않도록 주의해야 한다.
+    - git 내의 새폴더가 생기고 그 안에 초기화된 깃 저장소가 들어있기 때문이다.
+- git clone은 깃허브에 연결되어 있지 않는다.
+    - 이 말은 깃랩의 url도 clone이 가능하고 다른 클라우드도 가능한 곳이 존재한다.
+
+### git hub ssh
+- git config user.email
+- git config user.name
+
+- 위 두 명령어를 통해 어느 저장소든 정보를 노출할 수 있다. 이러한 문제를 방지하기 위해 git hub 는 ssh (secure shell) 를 관리할 수 있다.
+
+### Add Github Repo
+- Github 새 리포지토리 만들기.
+- 새 리포지토리 주소 저장 후 저장소로 올릴 git directory 선택
+- cmd 열고, git remote add [name] [url] 로 클라우드 연결하기.
+- origin이란 ?
+    - 오리진은 일반적인 깃 원격 이름이다.
