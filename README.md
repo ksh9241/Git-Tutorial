@@ -45,7 +45,9 @@
     - git branch -d [branch-name] : 브랜치를 삭제한다.
     - git branch -D [branch-name] : 병합여부와 상관없이 삭제한다.
     - git branch -m [branch-name] : 브랜치명을 변경한다.
-    - git branch -v: 브랜치 목록과 최종커밋이력을 함께 보여준다.
+    - git branch -v: 브랜치 목록과 최종커밋이력을 함께 
+    보여준다.
+    - git branch -M [brnach-name] : 마스터 브랜치를 변경한다.
 - git switch [branch-name] : 이 명령어는 HEAD가 실행한 
 브랜치를 바라보게 한다.
     - git switch -c [branch-name] : 브랜치를 생성하고 
@@ -78,6 +80,10 @@
     - git remote add [name] [url] : 이름의 표준은 origin이고, url은 깃허브 리포지토리 생성 시 나오는 url을 넣어준다.
     - git remote rename [old] [new] : 원격 이름을 바꾼다.
     - git remote remove [name] : 원격을 삭제한다. 오픈소스의 경우 원격이 여러개라 삭제하는 일도 발생한다.
+- git push [remote] [branch]: 클라우드에 커밋된 데이터를 저장한다.
+    - git push -u [remote] [branch] : 상류(upstream)을 의미한다. 이 말은 깃에게 로컬 컴퓨터 내 저장소의 마스터 브랜치를 [remote] [branch]로 푸시하라는 뜻이다. 최초 1회 -u를 사용하면 이후 git push 만으로 [remote] [branch]를 생략할 수 있다.
+    - git push [remote] [local-branch]:[remote-branch] 로컬에 있는 브랜치로 오리진 브랜치에 푸시할 수 있다.
+        - ex : git push origin cats:master
 
 ### 초심자가 실수하는 부분
 1. 어떤 프로젝트를 위해 하위 디렉토리에서 변경하는 파일이나 폴더는 깃에 의해 추적된다.
@@ -188,3 +194,7 @@
 - cmd 열고, git remote add [name] [url] 로 클라우드 연결하기.
 - origin이란 ?
     - 오리진은 일반적인 깃 원격 이름이다.
+
+### 메인 및 마스터 : 기본브랜치
+- 보통 메인이나 마스터를 같이 브랜치로 사용하지 않는다. git branch -M [branch-name] 을 통해 마스터 브랜치를 변경할 순 있으나, 기존 마스터 브랜치로 푸시하다가 메인 브랜치로 변경하면 클라우드는 마스터 브랜치를 디폴트로 잡는다.
+- 이 문제를 해결하기 위해 settings -> branchs -> Default branch에서 기본 브랜치를 변경하면 된다.
