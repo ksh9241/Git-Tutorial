@@ -87,8 +87,8 @@
     - git push -u [remote] [branch] : 상류(upstream)을 의미한다. 이 말은 깃에게 로컬 컴퓨터 내 저장소의 마스터 브랜치를 [remote] [branch]로 푸시하라는 뜻이다. 최초 1회 -u를 사용하면 이후 git push 만으로 [remote] [branch]를 생략할 수 있다.
     - git push [remote] [local-branch]:[remote-branch] 로컬에 있는 브랜치로 오리진 브랜치에 푸시할 수 있다.
         - ex : git push origin cats:master
-
-
+- git fetch [remote] : 원격저장소(클라우드) 에 저장된 자료를 다운로드 한다. 단, 로컬의 working directory와 통합되지 않는다.
+- git pull [remote] [branch] : git pull = git fetch + git merge
 
 
 ### 초심자가 실수하는 부분
@@ -205,4 +205,9 @@
 - 보통 메인이나 마스터를 같이 브랜치로 사용하지 않는다. git branch -M [branch-name] 을 통해 마스터 브랜치를 변경할 순 있으나, 기존 마스터 브랜치로 푸시하다가 메인 브랜치로 변경하면 클라우드는 마스터 브랜치를 디폴트로 잡는다.
 - 이 문제를 해결하기 위해 settings -> branchs -> Default branch에서 기본 브랜치를 변경하면 된다.
 
+### 원격 추적 브랜치로 작업하기
+- 클라우드에 올라간 origin/[branch] 가 로컬에 branch 목록에 없다고 하더라고 git switch [branch] 를 사용하면 깃이 로컬에서 그 브랜치를 만들고 동일한 이름의 원격 브랜치를 추적하도록 자동으로 설정한다.
+
 ### git fetch, git pull
+- Git fetch :  클라우드에 저장된 변경사항을 가져오는데 사용할 수 있다. (변경사항은 다운로드할 수 있지만 로컬에 작업과는 통합되지 않는다.)
+- Git Pull : 클라우드에 저장된 변경사항은 가져오며, 로컬의 작업과 통합된다.
