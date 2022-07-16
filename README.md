@@ -262,3 +262,18 @@
         1. 미완성된 코드를 검사할 때에도 마스터 브랜치의 무결성이 무너지지 않는다.
         2. A가 B에게 코드를 검사받을 때에도 B의 작업에 영향을 주지 않고, A의 브랜치를 Pull하여 코드를 검사할 수 있다.
     - 브랜치명은 feat(feature)/branch-name, bug/branch-name, fix/branch-name 등의 접두사를 붙인다.
+
+### Pull Requests
+- 협업에서 메인이 아닌 브랜치에서 작업한 내용을 병합해도 되는지 팀원 혹은 공동 작업자들에게 검토를 요청하고 병합을 승인 혹은 반려를 처리하는 장치이다.
+- PR 시 내용에 멘션을 추가할 수 있다. [@github_name]
+- PR 중 충돌 발생 해결하기.
+    - PR 요청 중 충돌이 발생하더라도 PR을 요청할 순 있다.
+    - 저장소의 공동작업자라면 Resolve conflicts 버튼을 클릭하여 코드를 병합할 수 있다. [이 방법은 간단한 병합만 처리하는 게 좋다. 브라우저에서 처리해야 하기 때문이다.]
+    - 하단 Merge pull request 버튼 옆에 view command line instructions 의 링크를 클릭하면 터미널을 이용하는 방법으로 병합을 할 수 있다.
+        1. cmd 열기
+        2. git fetch origin
+        3. git switch [충돌난 브랜치명]
+        4. git merge [master-branch]
+        5. 수정 후 커밋한다.
+        6. 마스터 브랜치로 돌아와서 git merge --no-ff [feature-branch-name]
+        7. git push origin master
